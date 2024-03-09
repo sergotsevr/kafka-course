@@ -1,4 +1,4 @@
-package com;
+package gotsev.com;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -9,22 +9,33 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-public class ProducerDemo {
+import static java.util.Objects.isNull;
 
-    private static final Logger log = LoggerFactory.getLogger(ProducerDemo.class.getSimpleName());
+public class ProducerWithKeys {
+
+    private static final Logger log = LoggerFactory.getLogger(ProducerWithKeys.class.getSimpleName());
     public static void main(String[] args) {
+
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
-
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("demo_java", "Hello java kafka World");
-
-        producer.send(producerRecord);
-
+        for (int i = 0; i<10; i++){
+            String topic = "demo_java";
+            String key = "id_" + i;
+            String value = "Hello java kafka World";
+            ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, key, value);
+            producer.send(producerRecord, (metadata, exception) -> {
+                if (isNull(exception)){
+                    log.info("partition = " + metadata.partition() + "\n"
+                    + "key = " + producerRecord.key() + "\n"
+                    + "value size = " + metadata.serializedValueSize());
+                }
+            });
+        }
         producer.flush();
         producer.close();
     }

@@ -1,4 +1,4 @@
-package com;
+package gotsev.com;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
