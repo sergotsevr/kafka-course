@@ -1,18 +1,18 @@
 package com.gotsev;
 
+import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
-import com.launchdarkly.eventsource.background.BackgroundEventHandler;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class WikimediaChangesProducer {
 
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) throws InterruptedException {
         String bootstrapServers = "127.0.0.1:9092";
 
         Properties properties = new Properties();
@@ -23,8 +23,13 @@ public class WikimediaChangesProducer {
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
         String topic = "wikimedia.recentchange";
-        BackgroundEventHandler eventHandler = ;
-        HttpsUrl url = new URL("https", "stream.wikimedia.org/v2/stream/recentchange");
-        EventSource.Builder builder = new EventSource.Builder(url);
+        EventHandler eventHandler = new WikimediaChangeHandler(producer, topic);
+        String url = "https://stream.wikimedia.org/v2/stream/recentchange";
+
+        EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url));
+        EventSource eventSource = builder.build();
+        eventSource.start();
+
+        TimeUnit.MINUTES.sleep(10L);
     }
 }
