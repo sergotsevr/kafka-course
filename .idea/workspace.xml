@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12553907-9b4e-4ba2-acfb-8ed8b917570c" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/kafka-basic/src/main/java/com/ConsumerGroupDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-consumer-opensearch/src/main/java/org/example/OpenSearchConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-consumer-opensearch/src/main/java/org/example/OpenSearchConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +28,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2cHHMHAYOXoADXu3aknkkDbGiBo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,11 +45,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.resources.opensearch-dashboards: Compose Deployment.executor": "Run",
+    "Docker.resources.opensearch: Compose Deployment.executor": "Run",
+    "Docker.resources: Compose Deployment.executor": "Run",
+    "Gradle.kafka-course:kafka-consumer-opensearch [:kafka-consumer-opensearch:OpenSearchConsumer.main()].executor": "Run",
+    "Gradle.kafka-course:kafka-producer-wikimedia [:kafka-producer-wikimedia:WikimediaChangesProducer.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-11",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/sergei/IdeaProjects/kafka-course/kafka-consumer-opensearch/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,17 +65,20 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kafka-consumer-opensearch/src/main/resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProducerWithKeys">
-    <configuration name="ConsumerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ConsumerDemo" />
-      <module name="kafka-course.kafka-basic.main" />
+  <component name="RunManager" selected="Application.WikimediaChangesProducer">
+    <configuration name="OpenSearchConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.OpenSearchConsumer" />
+      <module name="kafka-course.kafka-consumer-opensearch.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsumerShutdownDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ConsumerShutdownDemo" />
-      <module name="kafka-course.kafka-basic.main" />
+    <configuration name="WikimediaChangesProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gotsev.WikimediaChangesProducer" />
+      <module name="kafka-course.kafka-producer-wikimedia.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.*" />
+          <option name="PATTERN" value="com.gotsev.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,59 +99,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProducerCallbacksAndSticky" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ProducerCallbacksAndSticky" />
-      <module name="kafka-course.kafka-basic.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
     </configuration>
-    <configuration name="ProducerWithKeys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ProducerWithKeys" />
-      <module name="kafka-course.kafka-basic.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="resources: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="kafka-consumer-opensearch/src/main/resources/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
-    <configuration name="com.ConsumerGroupDemo" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ConsumerGroupDemo" />
-      <module name="kafka-course.kafka-basic.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="resources.opensearch-dashboards: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="opensearch-dashboards" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="kafka-consumer-opensearch/src/main/resources/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="resources.opensearch: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="opensearch" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="kafka-consumer-opensearch/src/main/resources/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.ConsumerDemo" />
-      <item itemvalue="Application.com.ConsumerGroupDemo" />
-      <item itemvalue="Application.ConsumerShutdownDemo" />
-      <item itemvalue="Application.ProducerCallbacksAndSticky" />
-      <item itemvalue="Application.ProducerWithKeys" />
+      <item itemvalue="Application.OpenSearchConsumer" />
+      <item itemvalue="Application.WikimediaChangesProducer" />
+      <item itemvalue="Docker.resources.opensearch-dashboards: Compose Deployment" />
+      <item itemvalue="Docker.resources.opensearch: Compose Deployment" />
+      <item itemvalue="Docker.resources: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.ConsumerGroupDemo" />
-        <item itemvalue="Application.ConsumerShutdownDemo" />
-        <item itemvalue="Application.ConsumerDemo" />
-        <item itemvalue="Application.ProducerWithKeys" />
-        <item itemvalue="Application.ProducerCallbacksAndSticky" />
+        <item itemvalue="Application.WikimediaChangesProducer" />
+        <item itemvalue="Application.OpenSearchConsumer" />
+        <item itemvalue="Docker.resources: Compose Deployment" />
+        <item itemvalue="Docker.resources.opensearch-dashboards: Compose Deployment" />
+        <item itemvalue="Docker.resources.opensearch: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +174,13 @@
       <updated>1707761536424</updated>
       <workItem from="1707761538355" duration="13049000" />
       <workItem from="1710003696778" duration="603000" />
+      <workItem from="1710089164309" duration="588000" />
+      <workItem from="1711309284950" duration="808000" />
+      <workItem from="1711550654653" duration="596000" />
+      <workItem from="1711609650379" duration="1559000" />
+      <workItem from="1712431936232" duration="5818000" />
+      <workItem from="1716640307354" duration="662000" />
+      <workItem from="1716706423250" duration="5345000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1707927444726</created>

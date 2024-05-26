@@ -35,7 +35,6 @@ public class OpenSearchConsumer {
 
     public static RestHighLevelClient createOpenSearchClient() {
         String connString = "http://localhost:9200";
-//        String connString = "https://c9p5mwld41:45zeygn9hy@kafka-course-2322630105.eu-west-1.bonsaisearch.net:443";
 
         // we build a URI from the connection string
         RestHighLevelClient restHighLevelClient;
@@ -137,7 +136,7 @@ public class OpenSearchConsumer {
                     // send the record into OpenSearch
 
                     // strategy 1
-                    // define an ID using Kafka Record coordinates
+                    // define an ID using Kafka Record coordinate       s
 //                    String id = record.topic() + "_" + record.partition() + "_" + record.offset();
 
                     try {
@@ -153,6 +152,7 @@ public class OpenSearchConsumer {
 
                         bulkRequest.add(indexRequest);
 
+                        log.info(id);
 //                        log.info(response.getId());
                     } catch (Exception e){
 
